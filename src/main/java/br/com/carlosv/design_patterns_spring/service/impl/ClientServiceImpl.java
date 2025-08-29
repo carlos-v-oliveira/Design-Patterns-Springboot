@@ -40,9 +40,8 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public void update(Long id, Client client) {
         Optional<Client> clientDB = clientRepository.findById(id);
-        if(clientDB.isEmpty()) {
+        if(clientDB.isPresent()) {
             saveClientWithZipCode(client);
-
         }
     }
 
