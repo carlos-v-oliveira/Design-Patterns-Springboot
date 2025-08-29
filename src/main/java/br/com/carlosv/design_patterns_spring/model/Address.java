@@ -1,5 +1,6 @@
 package br.com.carlosv.design_patterns_spring.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
@@ -7,26 +8,35 @@ import jakarta.persistence.Id;
 public class Address {
 
     @Id
+    @JsonProperty("cep")
     private String cep;
+    @JsonProperty("logradouro")
     private String address;
+    @JsonProperty("complemento")
     private String complement;
+    @JsonProperty("unidade")
     private String number;
+    @JsonProperty("bairro")
     private String neighborhood;
+    @JsonProperty("localidade")
     private String city;
+    @JsonProperty("uf")
     private String uf;
+    @JsonProperty("estado")
     private String state;
+    @JsonProperty("regiao")
     private String region;
+    @JsonProperty("ibge")
     private String ibge;
+    @JsonProperty("gia")
     private String gia;
+    @JsonProperty("ddd")
     private String ddd;
+    @JsonProperty("siafi")
     private String siafi;
 
-    public String getZipcode() {
+    public String getCep() {
         return cep;
-    }
-
-    public void setZipcode(String zipcode) {
-        this.cep = zipcode;
     }
 
     public String getAddress() {
@@ -125,22 +135,7 @@ public class Address {
         this.siafi = siafi;
     }
 
-    @Override
-    public String toString() {
-        return "Address{" +
-                "cep='" + cep + '\'' +
-                ", address='" + address + '\'' +
-                ", complement='" + complement + '\'' +
-                ", number='" + number + '\'' +
-                ", neighborhood='" + neighborhood + '\'' +
-                ", city='" + city + '\'' +
-                ", uf='" + uf + '\'' +
-                ", state='" + state + '\'' +
-                ", region='" + region + '\'' +
-                ", ibge='" + ibge + '\'' +
-                ", gia='" + gia + '\'' +
-                ", ddd='" + ddd + '\'' +
-                ", siafi='" + siafi + '\'' +
-                '}';
+    public void setCep(String cep) {
+        this.cep = cep;
     }
 }

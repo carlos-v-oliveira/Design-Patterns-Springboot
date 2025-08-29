@@ -52,7 +52,7 @@ public class ClientServiceImpl implements ClientService {
     }
 
     private void saveClientWithZipCode(Client client) {
-        String cep = client.getAddress().getZipcode();
+        String cep = client.getAddress().getCep();
         Address address = addressRepository.findById(cep).orElseGet(() -> {
             Address newAddress = byZipCodeService.checkZipCode(cep);
             addressRepository.save(newAddress);

@@ -2,7 +2,7 @@ package br.com.carlosv.design_patterns_spring.controller;
 
 import br.com.carlosv.design_patterns_spring.model.Client;
 import br.com.carlosv.design_patterns_spring.service.ClientService;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
